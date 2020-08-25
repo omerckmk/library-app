@@ -3,7 +3,9 @@
     <div class="container bg-info h-25">
       <router-link to="/">Home</router-link>
     </div>
-        <router-view />
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
 
   </div>
 </template>

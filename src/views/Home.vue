@@ -1,5 +1,5 @@
 <template>
-  <div class="container ">
+  <div class="container w-50">
     <BookStoreMenu class="bookstore justify-content-center "/>
     <UserOperationsMenu class="useroperations justify-content-center "/>
   </div>

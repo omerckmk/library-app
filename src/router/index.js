@@ -33,14 +33,14 @@ const routes = [
       )
   },
   {
-    path: "/get-user-form",
+    path: "/get-from-user",
     name: "GetFromUser",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "GetFromUser" */ "../views/UserOperations/GetFromUser"
+        /* webpackChunkName: "GetFromUser" */ "../views/UserOperations/GetFromUser.vue"
       )
   },
   {
