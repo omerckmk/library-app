@@ -7,7 +7,7 @@
     <BookCard
         :book="book"
         :key="book.bookId"
-        class="book-card  "
+        class="book-card"
         id=”books”
         v-for="book in bookList"/>
 

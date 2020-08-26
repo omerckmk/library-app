@@ -29,7 +29,7 @@
           </ValidationProvider>
         </div>
         <div class="form-group">
-          <button class="w-100 btn btn-info font-weight-bold" type="submit"
+          <button class="btnSubmit w-100 btn btn-info font-weight-bold" type="submit"
           >SAVE
           </button>
         </div>
