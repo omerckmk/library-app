@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <div class="container bg-info h-25">
-      <router-link to="/">Home</router-link>
+    <div class="container">
+      <div class="dropdown-header">
+      </div>
     </div>
-    <transition name="fade" mode="out-in">
-      <router-view />
+    <div class="mt-3"> <transition name="fade" mode="out-in">
+      <router-view/>
     </transition>
+    </div>
 
+    <notifications position="top center" class="mt-4" />
   </div>
 </template>
 <script>

@@ -60,6 +60,10 @@ export default {
     saveForm() {
       this.bookForm.bookId = uuidv4();
       this.$store.dispatch('addBook', this.bookForm);
+      this.$notify({
+        title : `${this.bookForm.name} ADDED` ,
+        type : "success"
+      });
       this.clearForm();
     },
     clearForm() {

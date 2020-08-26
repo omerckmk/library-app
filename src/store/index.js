@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
+
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage
 });
@@ -23,13 +24,15 @@ export default new Vuex.Store({
     },
     setToUser(state, payload) {
       const index = state.books.findIndex(
-        obj => obj.bookId === payload.selectBook
+        obj => obj.bookId === payload.selectBook.bookId
       );
-      state.books[index].user = payload;
-      state.books[index].status = false;
+      if (index > -1) {
+        state.books[index].user = payload;
+        state.books[index].status = false;
+      }
     },
     getFromUser(state, payload) {
-      const index = state.books.findIndex(obj => obj.user === payload);
+      const index = state.books.findIndex(obj => obj.bookId === payload.bookId);
       if (index > -1) {
         state.books[index].user = null;
         state.books[index].status = true;

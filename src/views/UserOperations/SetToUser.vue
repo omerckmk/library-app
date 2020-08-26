@@ -11,7 +11,10 @@
             <ValidationProvider mode="passive" name="as" rules="required" v-slot="{ errors }">
               <select class="form-control" required v-model="userForm.selectBook">
                 <option disabled hidden selected value="">Please select a book</option>
-                <option :key="book.bookId" :value="book.bookId" v-for="book in booksSetUser">{{ book.name }}</option>
+                <option :key="book.bookId"
+                        :value="{bookId : book.bookId, name : book.name}"
+                        v-for="book in booksSetUser">{{ book.name }}
+                </option>
               </select>
               <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
@@ -37,9 +40,7 @@
           </ValidationProvider>
         </div>
         <div class="form-group">
-          <button class="w-100 btn btn-info" type="submit">
-            Set To User
-          </button>
+          <button class="btn btn-info btn-lg btn-block" type="submit">Set To User</button>
         </div>
       </form>
     </ValidationObserver>
@@ -64,6 +65,10 @@ export default {
   methods: {
     setUser() {
       this.$store.dispatch('setToUser', this.userForm);
+      this.$notify({
+        title: `${this.userForm.selectBook.name} has been setted to user`,
+        type: "success"
+      });
       this.clearForm();
     },
     clearForm() {
