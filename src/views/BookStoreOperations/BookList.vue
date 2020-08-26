@@ -29,7 +29,7 @@
 
 <script>
 import {mapGetters} from 'vuex';
-import BookCard from "@/components/BookCard";
+import BookCard from "../../components/BookCard";
 
 export default {
   name: "BookList.vue",

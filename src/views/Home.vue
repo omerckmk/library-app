@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import BookStoreMenu from "@/components/BookStoreMenu";
-import UserOperationsMenu from "@/components/UserOperationsMenu";
+import BookStoreMenu from "../components/BookStoreMenu";
+import UserOperationsMenu from "../components/UserOperationsMenu";
 
 export default {
   name: "Home",
