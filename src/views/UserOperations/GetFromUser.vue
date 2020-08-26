@@ -1,13 +1,13 @@
 <template>
-  <div class="container-md w-50 border mt-4 p-4 ">
+  <div class="container-md w-50 mt-4 p-4 border border-primary shadow rounded  ">
     <form @submit.prevent="getFromUser">
       <div class="form-group">
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h3>Get From User</h3>
-          <router-link class="h3" to="/">Home</router-link>
+          <h3 class="font-weight-bold">Get From User</h3>
+          <router-link class="h3 font-weight-bold" to="/">Home</router-link>
         </div>
         <select class="form-control" required v-model="selectBook">
-          <option disabled hidden selected value="">Please select a book</option>
+          <option disabled  selected  value="">Please select a book</option>
           <option :key="book.bookId"
                   :value="book"
                   v-for="book in booksGetUser">{{ book.name }}</option>
@@ -21,14 +21,12 @@
             <p class="card-text">{{ selectBook.user.userAdress }}</p>
           </div>
           <div class="card-body" v-else>
-            <br>
-            <br>
-            <br>
+            <p class="card-text">No book selected</p>
           </div>
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" type="submit">Get From User</button>
+        <button class="btn btn-info btn-lg btn-block font-weight-bold" type="submit">Get From User</button>
       </div>
     </form>
   </div>

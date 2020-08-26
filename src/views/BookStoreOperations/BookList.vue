@@ -1,16 +1,17 @@
 <template>
-  <div class="container border mt-4 p-4 ">
-    <div class="d-flex justify-content-between ">
-      <h2 class="ml-3">Book List</h2>
-      <router-link class="h2 mr-3" to="/">Home</router-link>
+  <div class="container  mt-4 p-4 mb-4 border border-primary shadow rounded  ">
+    <div class="d-flex justify-content-between mb-3">
+      <h2 class="ml-3 font-weight-bold">Book List</h2>
+      <router-link class="h2 mr-3 font-weight-bold" to="/">Home</router-link>
     </div>
     <BookCard
         :book="book"
         :key="book.bookId"
-        class="book-card"
+        class="book-card  "
         id=”books”
         v-for="book in bookList"/>
-    <div class="container ">
+
+    <div class="container mt-3 ">
       <b-pagination
           align="center"
           :per-page="perPage"
@@ -39,7 +40,6 @@ export default {
     return {
       perPage: 3,
       currentPage: 1
-
     }
   },
   computed: {

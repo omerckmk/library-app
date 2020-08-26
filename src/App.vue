@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="dropdown-header">
-      </div>
+    <TheNavBar/>
+    <div class="mt-3">
+      <transition mode="out-in" name="fade">
+        <router-view/>
+      </transition>
     </div>
-    <div class="mt-3"> <transition name="fade" mode="out-in">
-      <router-view/>
-    </transition>
-    </div>
-
-    <notifications position="top center" class="mt-4" />
+    <notifications class="mt-1" position="top center"/>
   </div>
 </template>
 <script>
+import TheNavBar from "@/components/TheNavBar";
 import './styles/app.scss'
+
 export default {
   name: "app",
+  components: {
+    TheNavBar
+  }
 
 };
 </script>
 <style lang="scss">
 
-
+#app {
+  height: 100%;
+}
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="container-md w-50 border mt-4 p-4 ">
+  <div class="container-md w-50 border mt-4 p-4 border-primary shadow rounded ">
     <ValidationObserver v-slot="{ handleSubmit}">
       <form @submit.prevent="handleSubmit(setUser)">
         <div class="form-group">
           <div class="form-group">
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <h3>Set To User</h3>
-              <router-link class="h3" to="/">Home</router-link>
+              <h3 class="font-weight-bold" >Set To User</h3>
+              <router-link class="h3 font-weight-bold" to="/">Home</router-link>
             </div>
             <ValidationProvider mode="passive" name="as" rules="required" v-slot="{ errors }">
               <select class="form-control" required v-model="userForm.selectBook">
@@ -19,28 +19,28 @@
               <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
-          <ValidationProvider mode="passive" name="Id" rules="required" v-slot="{ errors }">
+          <ValidationProvider mode="passive" name="Identity" rules="required" v-slot="{ errors }">
             <input class="form-control" name="Id" placeholder="Please insert identity number" type="number"
                    v-model="userForm.userId">
             <span class="text-danger">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
         <div class="form-group">
-          <ValidationProvider mode="passive" name="fullName" rules="required" v-slot="{ errors }">
+          <ValidationProvider mode="passive" name="Name and Surname" rules="required" v-slot="{ errors }">
             <input class="form-control" name="fullName" placeholder="Please enter user name and surname"
                    v-model="userForm.fullName">
             <span class="text-danger">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
         <div class="form-group">
-          <ValidationProvider mode="passive" name="adress" rules="required" v-slot="{ errors }">
+          <ValidationProvider mode="passive" name="Adress" rules="required" v-slot="{ errors }">
             <textarea class="form-control" name="adress" placeholder="Please enter user address" type="text"
                       v-model="userForm.userAdress"></textarea>
             <span class="text-danger">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
         <div class="form-group">
-          <button class="btn btn-info btn-lg btn-block" type="submit">Set To User</button>
+          <button class="btn btn-info btn-lg btn-block font-weight-bold" type="submit">Set To User</button>
         </div>
       </form>
     </ValidationObserver>
