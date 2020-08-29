@@ -1,5 +1,7 @@
 <template>
-  <div class="container-md w-50 mt-4 p-4 border border-primary shadow rounded  ">
+  <div
+    class="container-md mt-4 p-4 border border-primary shadow rounded getFrom "
+  >
     <form @submit.prevent="getFromUser">
       <div class="form-group">
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -7,10 +9,13 @@
           <router-link class="h3 font-weight-bold" to="/">Home</router-link>
         </div>
         <select class="form-control" required v-model="selectBook">
-          <option disabled  selected  value="">Please select a book</option>
-          <option :key="book.bookId"
-                  :value="book"
-                  v-for="book in booksGetUser">{{ book.name }}</option>
+          <option disabled selected value="">Please select a book</option>
+          <option
+            :key="book.bookId"
+            :value="book"
+            v-for="book in booksGetUser"
+            >{{ book.name }}</option
+          >
         </select>
       </div>
       <div class="form-group">
@@ -26,40 +31,55 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block font-weight-bold" type="submit">Get From User</button>
+        <button
+          class="btn btn-info btn-lg btn-block font-weight-bold"
+          type="submit"
+        >
+          Get From User
+        </button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "GetFromUser.vue",
   data() {
     return {
       selectBook: null
-    }
+    };
   },
   methods: {
     getFromUser() {
-      this.$store.dispatch('getFromUser' , this.selectBook);
+      this.$store.dispatch("getFromUser", this.selectBook);
       this.$notify({
-        title :`${this.selectBook.name} has been getted from user`,
-        type : "success"
+        title: `${this.selectBook.name} has been getted from user`,
+        type: "success"
       });
       this.selectBook = null;
-    },
+    }
   },
   computed: {
     ...mapGetters({
       booksGetUser: "booksGetUser"
-    }),
+    })
   }
-}
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@media (max-width: 767px) {
+  .getFrom{
+    width: 90%;
 
+  }
+}
+@media (min-width: 768px) {
+  .getFrom{
+    width: 50%;
+  }
+}
 </style>

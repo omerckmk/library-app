@@ -3,9 +3,17 @@
     <div class="container d-flex justify-content-center py-3  ">
       <h1 class="title font-weight-bold text-dark">Bookcase App</h1>
     </div>
-    <div class="container d-flex align-items-center justify-content-center mt-4 ">
-      <BookStoreMenu class="justify-content-center w-50 mx-5 shadow  border border-info "/>
-      <UserOperationsMenu class="justify-content-center w-50 mx-5 shadow  border border-info"/>
+    <div
+        class="container menu d-flex align-items-center justify-content-center mt-4 "
+    >
+      <BookStoreMenu
+          class="mx-5 shadow  border border-info bookstore"
+      />
+      <UserOperationsMenu
+          class="mx-5 shadow  border border-info user"
+      />
+
+
     </div>
   </div>
 </template>
@@ -22,6 +30,18 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@media (max-width: 767px) {
+  .menu {
+    flex-direction: column;
+  }
+  .bookstore {
+    width: 100%;
+  }
+  .user {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
 
 </style>
